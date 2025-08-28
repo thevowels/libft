@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_schr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 16:59:44 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/28 13:33:02 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/08/28 13:25:28 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/08/28 13:30:29 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	len;
-
-	len = 0;
+	if (c == '\0')
+	{
+		while (*s)
+			s++;
+		return ((char *)s);
+	}
 	while (*s)
 	{
-		len++;
+		if (*s == c)
+			return ((char *)s);
 		s++;
 	}
-	return (len);
+	return (NULL);
 }

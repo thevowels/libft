@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 16:59:44 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/28 13:33:02 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/08/28 13:41:43 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/08/28 13:50:39 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	len;
-
-	len = 0;
-	while (*s)
+	if (n == 0)
+		return (0);
+	while (*s1++ == *s2++ && --n != 0)
 	{
-		len++;
-		s++;
+		if (*s1 == 0 || *s2 == 0)
+			break ;
 	}
-	return (len);
+	if (*s1 == 0)
+	{
+		return (0);
+	}
+	else
+	{
+		return (*s1 - *s2);
+	}
 }

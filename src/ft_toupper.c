@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 16:59:44 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/28 13:33:02 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/08/28 12:22:04 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/08/28 13:17:23 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_toupper(int c)
 {
-	size_t	len;
-
-	len = 0;
-	while (*s)
-	{
-		len++;
-		s++;
-	}
-	return (len);
+	if (ft_isalpha(c))
+		return (c & 95);
+	return (c);
 }
