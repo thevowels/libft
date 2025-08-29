@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 11:29:38 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/29 15:06:03 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/08/30 01:40:28 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*ptr;
 
 	slen = ft_strlen(s);
-	if (*s == 0)
+	if (!s)
 		return (NULL);
 	if (start > slen)
 	{

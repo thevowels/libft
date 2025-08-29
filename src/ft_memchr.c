@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 13:48:43 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/28 15:42:59 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/08/29 23:53:52 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	ch = c;
 	src = s;
-	while (--n > 0)
+	while (n-- > 0)
 	{
 		if (*src++ == ch)
-			return ((void *)src - 1);
+			return ((void *)(src - 1));
 	}
 	return (NULL);
 }

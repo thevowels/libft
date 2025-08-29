@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 13:31:54 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/28 13:47:58 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/08/30 00:37:08 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,12 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		src++;
 	}
-	if (c == '\0')
-	{
+	if (c == 0)
 		return (src);
-	}
-	while (*(--src))
+	while (src > s && *(--src))
 	{
-		if (*src == c)
+		if (*src == (char)c)
 			return (src);
-		if (src == s)
-			break ;
 	}
 	return (NULL);
 }
