@@ -29,7 +29,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-AFLAGS = -rcs
+AFLAGS = rcs
 
 OBJS = $(SRCS:.c=.o)
 
@@ -38,13 +38,13 @@ BONUS_OBJS = $(BONUS:.c=.o)
 .c.o:
 	$(CC) $(CFLAGS) -c -I $(INCLUDES) $< -o $(<:.c=.o)
 
+all: $(NAME)
+
 $(NAME): $(OBJS)
 	$(AR) $(AFLAGS) -o $(NAME) $(OBJS)
 
 bonus : $(BONUS_OBJS) all
 	ar $(AFLAGS) -o $(NAME) $(OBJS) $(BONUS_OBJS)
-
-all: $(NAME)
 
 clean:
 	rm -rf $(OBJS) $(BONUS_OBJS)
@@ -54,4 +54,4 @@ fclean: clean
 
 re:	fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
