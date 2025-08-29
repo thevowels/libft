@@ -1,55 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/28 23:00:54 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/29 16:21:35 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/08/29 11:29:38 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/08/29 15:06:03 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	return (c == ' ' || (unsigned)c - '\t' < 5);
+	size_t	slen;
+	char	*ptr;
+
+	slen = ft_strlen(s);
+	if (*s == 0)
+		return (NULL);
+	if (start > slen)
+	{
+		return (ft_strdup(""));
+	}
+	if (len > slen - start)
+		len = slen - start;
+	ptr = malloc(len + 1);
+	if (!ptr)
+		return (NULL);
+	ft_strlcpy(ptr, s + start, len + 1);
+	ptr[len] = 0;
+	return (ptr);
 }
 
-int	ft_atoi(const char *str)
-{
-	char	sign;
-	int		result;
-
-	result = 0;
-	sign = 1;
-	while (ft_isspace(*str))
-		str++;
-	if (*str == '+')
-		str++;
-	else if (*str == '-')
-	{
-		sign = -1;
-		str++;
-	}
-	while (ft_isdigit(*str))
-	{
-		result *= 10;
-		result += *str - '0';
-		str++;
-	}
-	return (result * sign);
-}
 /*
 #include <stdio.h>
 
 int	main(void)
 {
-	int result;
+	char	*str;
+	char	*dest;
 
-	result = ft_atoi("1234:2");
-
-	printf("Result is %i\n", result);
+	str = "lorem ipsum dolor sit amet";
+	dest = ft_substr(str, 0,10);
+	printf("%s\n", dest);
 }
-*/
+	*/
