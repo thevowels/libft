@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:44:02 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/29 18:21:53 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/08/29 18:23:24 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,14 @@ static char	*ft_strndup(const char *s, size_t len)
 	return (ptr);
 }
 
-// static void	ft_clean(char **ptr, size_t i)
-// {
-// 	while (i > 0)
-// 	{
-// 		free(ptr[--i]);
-// 	}
-// 	free(ptr);
-// }
+static void	ft_clean(char **ptr, size_t i)
+{
+	while (i > 0)
+	{
+		free(ptr[--i]);
+	}
+	free(ptr);
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -95,6 +95,11 @@ char	**ft_split(char const *s, char c)
 			s++;
 		i_len = ft_getlength(s, c);
 		arr[i++] = ft_strndup(s, i_len);
+		if (arr[i - 1] == NULL)
+		{
+			ft_clean(arr, i);
+			return (NULL);
+		}
 		s += i_len + 1;
 	}
 	return (arr);
