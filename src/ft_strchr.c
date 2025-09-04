@@ -14,20 +14,41 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	unsigned char	ch;
-
-	ch = (unsigned char)c;
-	if (ch == 0)
-	{
-		while (*s)
-			s++;
-		return ((char *)s);
-	}
 	while (*s)
 	{
-		if ((unsigned char)*s == ch)
+		if (*s == (char)c)
 			return ((char *)s);
 		s++;
 	}
-	return (NULL);
+	if (*s == (char)c)
+		return ((char *)s);
+	return (0);
 }
+
+/*
+	we are finding the char c inside the str.
+	for the valid function call c will always be a valid char.
+	I was worried about the signed and unsigned thing due to the
+	pressures form previous problems.
+
+	char	*ft_strchr(const char *s, int c)
+	{
+		unsigned char	ch;
+
+		ch = (unsigned char)c;
+		if (ch == 0)
+		{
+			while (*s)
+				s++;
+			return ((char *)s);
+		}
+		while (*s)
+		{
+			if ((unsigned char)*s == ch)
+				return ((char *)s);
+			s++;
+		}
+		return (NULL);
+	}
+
+*/
