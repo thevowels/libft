@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 11:39:01 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/29 11:16:06 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/09/09 15:44:32 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,22 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	const char	*addr = src;
-	size_t		n;
+	const char *source;
+	size_t s;
 
-	n = size;
-	if (n != 0)
+	s = size;
+	source = src;
+	if (s != 0)
 	{
-		while (--n != 0)
+		while (--s != 0 && *source)
 		{
-			*dest++ = *src++;
-			if (*(dest - 1) == '\0')
-				break ;
+			*dest++ = *source++;
 		}
+		*dest  = 0;
 	}
-	if (n == 0)
-	{
-		if (size != 0)
-			*dest = '\0';
-		while (*src++)
-			;
-	}
-	return (src - addr - 1);
-}
+	return (ft_strlen(src));
 
+}
 /*
 #include <bsd/string.h>
 #include <stdio.h>

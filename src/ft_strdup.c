@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 11:08:20 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/09/04 09:47:55 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/09/04 09:50:48 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s)
 		return (NULL);
 	len = ft_strlen(s);
 	ptr = malloc(len + 1);
-	if(!ptr)
+	if (!ptr)
 		return (NULL);
 	ft_strlcpy(ptr, s, len + 1);
 	return (ptr);
