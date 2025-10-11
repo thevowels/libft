@@ -8,12 +8,15 @@ SRC_CTYPE= ft_isalpha.c
 
 SRC_PRINT = ft_putstr.c
 
+SRC_MATH = ft_iseven.c ft_isodd.c
 
 SRCS =
 
-SRCS += $(addprefix ./src/c_type/, $(SRC_CTYPE))
+SRCS += $(addprefix ./src/ctype/, $(SRC_CTYPE))
 
 SRCS += $(addprefix ./src/print/, $(SRC_PRINT))
+
+SRCS += $(addprefix ./src/math/, $(SRC_MATH))
 
 OBJS = $(SRCS:.c=.o)
 
