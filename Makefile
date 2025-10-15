@@ -4,7 +4,8 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC_CTYPE= ft_isalpha.c
+SRC_CTYPE=	ft_isalpha.c ft_isdigit.c ft_islower.c ft_isupper.c ft_tolower.c \
+			ft_toupper.c
 
 SRC_PRINT = ft_putstr.c
 
