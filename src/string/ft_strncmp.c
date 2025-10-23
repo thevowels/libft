@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 23:12:21 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/30 02:51:22 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/10/23 20:06:14 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/10/23 20:22:17 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	if (n == 0)
+		return (0);
+	while (*s1 && *s2 && n > 0)
+	{
+		if (*s1 != *s2 || *s1 != 0)
+			break ;
+		n--;
+		s1++;
+		s2++;
+	}
+	if (n == 0 || s1 == 0 || s2 == 0)
+		return (0);
+	return (*s1 - *s2);
 }

@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 22:43:44 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/29 22:47:52 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/10/23 19:43:31 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/10/23 19:46:05 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-void	ft_putstr_fd(char *s, int fd)
+size_t	ft_strlen(char *s)
 {
-	while (*s)
-	{
-		ft_putchar_fd(*s, fd);
-		s++;
-	}
+	size_t	i;
+
+	if (!s)
+		return (-1);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }
