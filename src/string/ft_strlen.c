@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/29 23:12:21 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/08/30 02:51:22 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2025/10/23 19:43:31 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2025/10/23 19:46:05 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+size_t	ft_strlen(char *s)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	size_t	i;
+
+	if (!s)
+		return (-1);
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
 }

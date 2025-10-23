@@ -12,7 +12,7 @@ SRC_PRINT = ft_putstr.c
 
 SRC_MATH = ft_iseven.c ft_isodd.c
 
-SRC_STRING = ft_startswith.c ft_split.c
+SRC_STRING = ft_startswith.c ft_split.c ft_strlen.c
 
 SRC_OTHERS = ft_memcpy.c
 
