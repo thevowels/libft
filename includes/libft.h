@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 18:36:44 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/10/23 20:40:48 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/10/25 03:13:33 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int		ft_toupper(int c);
 int		ft_startswith(char *str, char *start);
 char	**ft_split(char *str, char c);
 size_t	ft_strlen(char *s);
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	**ft_sarr_free(char **arr);
 
 ///////////////////////////////////////////////////////////////////////////////
 //									PRINT
