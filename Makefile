@@ -8,7 +8,7 @@ SRC_CTYPE=	ft_isalpha.c ft_isdigit.c ft_isspace.c \
 			ft_islower.c ft_isupper.c ft_tolower.c \
 			ft_toupper.c 
 
-SRC_PRINT = ft_putstr.c
+SRC_PRINT = ft_putstr.c ft_putstr_fd.c
 
 SRC_MATH = ft_iseven.c ft_isodd.c
 
