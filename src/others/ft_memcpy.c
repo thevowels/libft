@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 08:55:54 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/10/23 19:42:53 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/10/30 16:13:23 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 	- undefined behavior if either parameter is NULL
  */
 
-void	*ft_rest(void *dest, const void *src, size_t n)
+static void	*ft_rest(void *dest, const void *src, size_t n)
 {
 	unsigned char	*char_dest;
 	unsigned char	*char_src;
