@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 18:36:44 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/11/26 02:15:44 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2025/12/04 17:47:46 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+	struct s_list	*prev;
+}					t_list;
 
 ///////////////////////////////////////////////////////////////////////////////
 //									CTYPE                                    //
@@ -26,6 +33,7 @@ int					ft_islower(int c);
 int					ft_isupper(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+int					ft_atoi(const char *str);
 
 ///////////////////////////////////////////////////////////////////////////////
 //									STRING                                   //
@@ -62,11 +70,6 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 ///////////////////////////////////////////////////////////////////////////////
 //									LINKED LIST                              //
 ///////////////////////////////////////////////////////////////////////////////
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-	struct s_list	*prev;
-}					t_list;
+t_list				*ft_lstnew(void *content);
 
 #endif
