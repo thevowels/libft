@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 05:08:49 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2025/10/23 19:43:03 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/01/18 04:22:46 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char	**ft_split(char *str, char c)
 	if (!result)
 		return (NULL);
 	word_index = 0;
-	while (*str)
+	while (*str && word_index <= count_words(str, c))
 	{
 		while (*str == c)
 			str++;
