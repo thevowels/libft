@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 05:08:49 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/01/18 04:22:46 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/01/19 21:37:05 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,22 +67,32 @@ static char	*create_word(char const *s, size_t len)
 	return (word);
 }
 
+static char	**check_and_get(char *str, char c)
+{
+	char	**result;
+
+	if (!str || count_words(str, c) == 0)
+		return (NULL);
+	result = (char **)malloc(sizeof(char *) * (count_words(str, c) + 1));
+	return (result);
+}
+
 char	**ft_split(char *str, char c)
 {
 	char		**result;
 	size_t		word_index;
 	const char	*word_start;
 
-	if (!str || count_words(str, c) == 0)
-		return (NULL);
-	result = (char **)malloc(sizeof(char *) * (count_words(str, c) + 1));
+	result = check_and_get(str, c);
 	if (!result)
 		return (NULL);
 	word_index = 0;
-	while (*str && word_index <= count_words(str, c))
+	while (*str)
 	{
-		while (*str == c)
+		while (*str && *str == c)
 			str++;
+		if (!*str)
+			continue ;
 		word_start = str;
 		while (*str && *str != c)
 			str++;
