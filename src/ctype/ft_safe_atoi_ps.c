@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 22:18:50 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/01/27 22:46:35 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/02/01 03:22:36 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_safe_atoi(const char *str, int *val)
 	skip_spaces(str, &i);
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (ft_isspace(str[i + 1]))
+		if (ft_isspace(str[i + 1]) || str[i+1] == 0)
 			return (-1);
 		if (str[i] == '-')
 			sign *= -1;
