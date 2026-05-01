@@ -1,33 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 20:06:14 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/04/18 11:19:48 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/04/18 11:27:36 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/04/18 11:42:21 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+static int	ft_calc_len(int n)
 {
-	const unsigned char	*p1 = (const unsigned char *)s1;
-	const unsigned char	*p2 = (const unsigned char *)s2;
+	int	len;
 
-	if (n == 0)
-		return (0);
-	while (*p1 && *p2 && n > 0)
+	len = 0;
+	if (n <= 0)
+		len = 1;
+	while (n)
 	{
-		if (*p1 != *p2)
-			break ;
-		n--;
-		p1++;
-		p2++;
+		n /= 10;
+		len++;
 	}
+	return (len);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	size_t	len;
+
+	len = ft_calc_len(n);
+	str = (char *)malloc(len + 1);
+	if (!str)
+		return (NULL);
+	str[len] = '\0';
 	if (n == 0)
-		return (0);
-	return (*p1 - *p2);
+		str[0] = '0';
+	else if (n < 0)
+		str[0] = '-';
+	while (n)
+	{
+		str[--len] = '0' + ft_abs(n % 10);
+		n /= 10;
+	}
+	return (str);
 }

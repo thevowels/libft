@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 20:06:14 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/04/18 11:19:48 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/04/17 08:19:24 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/04/18 11:18:55 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	const unsigned char	*p1 = (const unsigned char *)s1;
 	const unsigned char	*p2 = (const unsigned char *)s2;
+	size_t				i;
 
-	if (n == 0)
-		return (0);
-	while (*p1 && *p2 && n > 0)
+	i = 0;
+	while (i < n)
 	{
-		if (*p1 != *p2)
-			break ;
-		n--;
-		p1++;
-		p2++;
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
+		i++;
 	}
-	if (n == 0)
-		return (0);
-	return (*p1 - *p2);
+	return (0);
 }

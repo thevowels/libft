@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 20:06:14 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/04/18 11:19:48 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/04/17 08:47:03 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/04/18 11:19:40 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	const unsigned char	*p1 = (const unsigned char *)s1;
-	const unsigned char	*p2 = (const unsigned char *)s2;
+	size_t	i;
 
-	if (n == 0)
-		return (0);
-	while (*p1 && *p2 && n > 0)
+	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
+	while (src[i] && i < size - 1)
 	{
-		if (*p1 != *p2)
-			break ;
-		n--;
-		p1++;
-		p2++;
+		dst[i] = src[i];
+		i++;
 	}
-	if (n == 0)
-		return (0);
-	return (*p1 - *p2);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
