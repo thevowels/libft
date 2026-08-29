@@ -24,7 +24,11 @@ SRC_STRING = ft_startswith.c ft_split.c ft_strlen.c \
 SRC_OTHERS = ft_memcpy.c ft_memmove.c ft_memset.c ft_bzero.c \
 			 ft_memchr.c ft_memcmp.c ft_calloc.c
 
-SRC_LINKEDLISTS = ft_lstnew.c
+SRC_LINKEDLISTS = ft_lstadd_back.c  ft_lstadd_front.c  ft_lstclear.c  \
+				ft_lstdelone.c  ft_lstiter.c  ft_lstlast.c  ft_lstmap.c \
+				ft_lstnew.c  ft_lstsize.c
+
+SRC_VECTOR = non.c
 
 SRCS += $(addprefix ./src/ctype/, $(SRC_CTYPE))
 
@@ -37,6 +41,9 @@ SRCS += $(addprefix ./src/string/, $(SRC_STRING))
 SRCS += $(addprefix ./src/others/, $(SRC_OTHERS))
 
 SRCS += $(addprefix ./src/linked_list/, $(SRC_LINKEDLISTS))
+
+SRCS += $(addprefix ./src/vector/, $(SRC_VECTOR))
+
 
 OBJS = $(SRCS:.c=.o)
 

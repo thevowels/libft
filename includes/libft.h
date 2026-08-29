@@ -6,7 +6,7 @@
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 18:36:44 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/05/02 00:32:05 by aphyo-ht         ###   ########.fr       */
+/*   Updated: 2026/08/29 18:37:18 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-	struct s_list	*prev;
 }					t_list;
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -99,6 +98,58 @@ void				*ft_calloc(size_t count, size_t size);
 ///////////////////////////////////////////////////////////////////////////////
 //									LINKED LIST                              //
 ///////////////////////////////////////////////////////////////////////////////
+
+t_list				*ft_lstnew(void *content);
+void				ft_lstadd_front(t_list **lst, t_list *new);
+int					ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
+void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void (*del)(void *));
+void				ft_lstclear(t_list **lst, void (*del)(void *));
+
+///////////////////////////////////////////////////////////////////////////////
+//									VECTOR										//
+///////////////////////////////////////////////////////////////////////////////
+
+typedef struct s_vector
+{
+	double			x;
+	double			y;
+	double			z;
+}					t_vec;
+
+
+t_vec 	ft_add_vectors(t_vec v1, t_vec v2);
+t_vec	ft_subtract_vectors(t_vec v1, t_vec v2);
+// t_vec	ft_multiply_vectors(t_vec v1, t_vec v2);
+
+// t_vec	multiply_vector_by_scalar(t_vec v1, double scalar);
+// t_vec	divide_vector_by_scalar(t_vec v1, double scalar);
+
+// double	dot_product(t_vec v1, t_vec v2);
+// t_vec	cross_product(t_vec v1, t_vec v2);
+
+// t_vec	normalize_vector(t_vec v1);
+// t_vec	random_vector(unsigned int seed);
+// t_vec	random_vector_in_unit_sphere(int seed);
+// t_vec	random_vector_in_hemisphere(int seed, t_vec normal);
+
+// t_vec	new_vector(double x, double y, double z);
+// t_vec	invert_vector(t_vec vec);
+// t_vec	abs_vector(t_vec color);
+
+// double	length_vector(t_vec v1);
+// double	length_squared(t_vec vector);
+// void	print_vector(t_vec vector);
+
+// bool	are_equal_vectors(t_vec a, t_vec b);
+
+// int		lcg_random(unsigned int seed);
+// int		xorshift_random(int seed);
+// int		xslcg_random(unsigned int seed);
 
 
 #endif
