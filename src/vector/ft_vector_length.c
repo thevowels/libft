@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_vector_length.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/29 18:01:26 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/08/29 21:31:54 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/08/29 19:22:36 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/08/29 19:48:34 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+#include "math.h"
+double ft_vector_length(t_vec v1)
 {
-	void *tmp;
-	
-	while(lst)
-	{
-		tmp = f(lst->content);
-		del(lst->content);
-		lst->content = tmp;
-		lst = lst->next;
-	}
-	return lst;
+	return (sqrt(ft_dot_product(v1,v1)));
 }

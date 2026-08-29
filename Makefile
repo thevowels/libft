@@ -28,7 +28,14 @@ SRC_LINKEDLISTS = ft_lstadd_back.c  ft_lstadd_front.c  ft_lstclear.c  \
 				ft_lstdelone.c  ft_lstiter.c  ft_lstlast.c  ft_lstmap.c \
 				ft_lstnew.c  ft_lstsize.c
 
-SRC_VECTOR = non.c
+SRC_VECTOR = ft_abs_vector.c ft_cross_product.c ft_hadamard_product.c \
+			ft_isequal.c ft_new_vector.c ft_random_vector_in_hemisphere.c \
+			ft_scalar_div.c	ft_subtract_vectors.c ft_vector_length.c \
+			ft_xorshift_random.c ft_add_vectors.c ft_dot_product.c \
+			ft_invert_vector.c ft_lcg_random.c ft_random_vector.c \
+			ft_random_vector_in_unit_sphere.c  ft_scalar_multi.c \
+			ft_unit_vector.c ft_vector_print.c ft_xslcg_random.c
+
 
 SRCS += $(addprefix ./src/ctype/, $(SRC_CTYPE))
 

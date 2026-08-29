@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lcg_random.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/29 18:01:26 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/08/29 21:31:54 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/08/29 21:28:18 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/08/29 21:35:39 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+/* Linear Congruential Generator (LCG) Random Number Generator */
+int	ft_lcg_random(unsigned int seed)
 {
-	void *tmp;
-	
-	while(lst)
-	{
-		tmp = f(lst->content);
-		del(lst->content);
-		lst->content = tmp;
-		lst = lst->next;
-	}
-	return lst;
+	const unsigned int multiplier = 1664525;
+	const unsigned int increment = 1013904227;
+
+	return (int)(multiplier * seed + increment);
 }

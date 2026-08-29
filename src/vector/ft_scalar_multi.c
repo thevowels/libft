@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_scalar_multi.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aphyo-ht <aphyo-ht@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/29 18:01:26 by aphyo-ht          #+#    #+#             */
-/*   Updated: 2026/08/29 21:31:54 by aphyo-ht         ###   ########.fr       */
+/*   Created: 2026/08/29 18:57:45 by aphyo-ht          #+#    #+#             */
+/*   Updated: 2026/08/29 18:59:43 by aphyo-ht         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_vec	ft_scalar_multi(t_vec v1, double scalar)
 {
-	void *tmp;
-	
-	while(lst)
-	{
-		tmp = f(lst->content);
-		del(lst->content);
-		lst->content = tmp;
-		lst = lst->next;
-	}
-	return lst;
+	t_vec tmp;
+
+	tmp.x = v1.x * scalar;
+	tmp.y = v1.y * scalar;
+	tmp.z = v1.z * scalar;
+	return (tmp);
 }
